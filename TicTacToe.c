@@ -8,6 +8,7 @@
   const char EMPTY = ' ';
   char computer = ' ';
   char player = ' ';
+  //this move need to medium level
   const int COMP_MOVES[] = { 4, 0, 2, 6, 8, 1, 3, 5, 7 };
   int answer;
   int count;
@@ -87,22 +88,28 @@ int randomMove(char c){
 }
 
 int computerTurnHardLevel(){
+  //in this strategy the best move is center cell
   if(move == 1 || move == 2){
     if (isCellEmpty(4)==1){
       board[4] = computer;
       move++;
     }else{
+      //or corner cell
       board[chooseCornerCell()] = computer;
       move++;
     }
   }else{
+    //computer check can player win
     if(checkWinRow(computer)==1){
       board[nextMove] = computer;
+    //computer check can it win
     }else if(checkWinRow(player)==1){
       board[nextMove] = computer;
+    //best move is corner cell
     }else if (chooseCornerCell()!=10){
       board[chooseCornerCell()] = computer;
     }else{
+    //usually it is last move or last two moves
       randomMove(computer);
     }
   }

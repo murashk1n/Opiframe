@@ -1,0 +1,32 @@
+	#include <stdio.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <stdlib.h> 
+
+int main(){
+
+  // I guess the number
+	
+	int secretNumber = rand() % 100 + 1; 
+	int attempts = 0;
+	int guess;
+	
+  printf("\tWelcome to Guess My Number\n\n");
+  printf("Try to guess the number! Good luck!\n");
+
+	do{
+    printf("Enter a guess: \n");
+		scanf("%d",&guess);
+		++attempts;
+		if (guess > secretNumber){
+			printf("Too high!\n\n");
+		}
+		else if (guess < secretNumber){
+			printf("Too low!\n\n");
+		}
+		else{
+			printf("\nThat's it! You got it in  %d  attempts!\n", attempts);
+		}
+	} while (guess != secretNumber);
+      return 0;
+}

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+	//Kivi sakset paperia
 char checkWhoWin(char a, char b){
 	if(a == 'k' && b == 's' || a == 's' && b == 'k'){
 		return 'k';
@@ -15,7 +16,6 @@ char checkWhoWin(char a, char b){
 }
 
 int main(){
-	//Kivi sakset paperia
 	srand(time(0));
 	int random = 1 + rand() % 3;
 	printf("Welcome to kivi sakset paperia\n\n");
